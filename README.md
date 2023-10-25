@@ -78,3 +78,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - git remote add origin https://github.com/vsvishal/youtube-clone.git
 - git branch -M main
 - git push -u origin main
+  https://gist.github.com/c0ldlimit/4089101
