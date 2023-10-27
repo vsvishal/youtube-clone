@@ -6,14 +6,16 @@ import {
   SEARCH_ICON,
   YOUTUBE_SEARCH_API,
 } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/redux/appSlice";
 import { Link } from "react-router-dom";
+import { cacheResults } from "../utils/redux/searchSlice";
 
 function Head() {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestion, setShowSuggestion] = useState(false);
+  const searchCache = useSelector((store) => store.search);
 
   const dispatch = useDispatch();
   const toggleMenuHandler = () => {
@@ -25,7 +27,11 @@ function Head() {
   // otherwise decline the api call
   useEffect(() => {
     const timer = setTimeout(() => {
-      getSearchSuggestion();
+      if (searchCache[searchQuery]) {
+        setSuggestions(searchCache[searchQuery]);
+      } else {
+        getSearchSuggestion();
+      }
     }, 200);
 
     return () => {
@@ -37,6 +43,12 @@ function Head() {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
     setSuggestions(json[1]);
+    dispatch(
+      cacheResults({
+        [searchQuery]: json[1],
+      })
+    );
+    console.log("API called");
   };
 
   return (

@@ -21,6 +21,8 @@ export const YOUTUBE_SEARCH_API =
 
 export const CHANNELS_URL = `https://youtube.googleapis.com/youtube/v3/channels?key=${API_KEY}`;
 
+export const COMMENTS_URL = `https://youtube.googleapis.com/youtube/v3/comments?part=id&id=FpRq9C6C19g&key=${API_KEY}`;
+
 export const BUTTON_NAME_LIST = [
   "ALL",
   "Computer Programming",

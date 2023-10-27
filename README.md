@@ -81,3 +81,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
   https://gist.github.com/c0ldlimit/4089101
 
 ### Debouncing
+
+### Least Recently Used (LRU) Cache
+
+### N level nesting
