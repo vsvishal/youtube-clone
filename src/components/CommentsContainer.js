@@ -6,31 +6,13 @@ import Comments from "./Comments";
 function CommentsContainer() {
   const comments = COMMENTS_MOCK_DATA2[0].items;
   console.log("comments ", comments);
+
   // console.log(
   //   "comments display ",
   //   comments[0].snippet.topLevelComment.snippet.textOriginal
   // );
 
-  console.log("reply ", comments[0].replies.comments[1].snippet.textOriginal);
-
-  // comments.map((comment) => {
-  //   console.log("MAP: ", comment.snippet.topLevelComment.snippet.textOriginal);
-  //   if (comment.replies) {
-  //     comment.replies.comments.map((reply) =>
-  //       console.log("Reply: ", reply.snippet.textOriginal)
-  //     );
-  //   }
-  // });
-
-  // const addComment = comments.map((comment) => {
-  //   <Comments comment={comment.snippet.topLevelComment.snippet.textOriginal} />;
-
-  //   if (comment.replies) {
-  //     comment.replies.comments.map((reply) => (
-  //       <Comments comment={reply.snippet.textOriginal} />
-  //     ));
-  //   }
-  // });
+  // console.log("reply ", comments[0].replies.comments[1].snippet.textOriginal);
 
   // useEffect(() => {
   //   getComments();
@@ -45,12 +27,25 @@ function CommentsContainer() {
   return (
     <div>
       <h1 className="font-bold">CommentsContainer</h1>
-      {comments.map((comment) => (
-        <Comments
-          comment={comment.snippet.topLevelComment.snippet.textOriginal}
-          replies={comment.replies ? comment.replies.comments : "empty-reply"}
-        />
-      ))}
+      {comments.map((comment) => {
+        const {
+          authorDisplayName,
+          textOriginal,
+          authorProfileImageUrl,
+          publishedAt,
+        } = comment.snippet.topLevelComment.snippet;
+        return (
+          <Comments
+            comment={textOriginal}
+            authorDisplayName={authorDisplayName}
+            authorProfileImageUrl={authorProfileImageUrl}
+            publishedAt={publishedAt}
+            replies={comment.replies ? comment.replies.comments : "empty-reply"}
+            imgCss={"w-10 h-10 rounded-full"}
+            paraCss={"ml-14 w-2/4"}
+          />
+        );
+      })}
     </div>
   );
 }
