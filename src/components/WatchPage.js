@@ -21,7 +21,6 @@ function WatchPage() {
 
   const { snippet, statistics } = filteredVideo[0] || [];
   const { channelTitle, title, thumbnails } = snippet || {};
-  console.log("filteredVideo: ", filteredVideo);
 
   useEffect(() => {
     dispatch(closeMenu());

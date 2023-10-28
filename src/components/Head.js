@@ -48,7 +48,6 @@ function Head() {
         [searchQuery]: json[1],
       })
     );
-    console.log("API called");
   };
 
   return (

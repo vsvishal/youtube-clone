@@ -13,7 +13,6 @@ const useGetComments = (searchParams) => {
     const json = await data.json();
     setCommentData(json.items);
   };
-  console.log("commentData ", commentData);
   return commentData;
 };
 

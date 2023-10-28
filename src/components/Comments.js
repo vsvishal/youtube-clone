@@ -10,10 +10,6 @@ function Comments({
   imgCss,
   paraCss,
 }) {
-  // console.log("Comments component: ", comment);
-  // console.log("replies inside comment: ", replies);
-  // console.log("typeof replies: ", typeof replies);
-
   return (
     <>
       <div className="mb-4">
