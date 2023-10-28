@@ -2,10 +2,14 @@ import React, { useEffect } from "react";
 import { COMMENTS_URL } from "../utils/constants";
 import COMMENTS_MOCK_DATA2 from "../utils/mock/commentsMockData2";
 import Comments from "./Comments";
+import { useSearchParams } from "react-router-dom";
+import useGetComments from "../utils/hook/useGetComments";
 
 function CommentsContainer() {
-  const comments = COMMENTS_MOCK_DATA2[0].items;
-  console.log("comments ", comments);
+  // const comments = COMMENTS_MOCK_DATA2[0].items;
+  const [searchParams] = useSearchParams();
+  const comments = useGetComments(searchParams.get("v"));
+  console.log("comments inside container: ", comments);
 
   // console.log(
   //   "comments display ",
@@ -36,6 +40,7 @@ function CommentsContainer() {
         } = comment.snippet.topLevelComment.snippet;
         return (
           <Comments
+            key={comment.id}
             comment={textOriginal}
             authorDisplayName={authorDisplayName}
             authorProfileImageUrl={authorProfileImageUrl}

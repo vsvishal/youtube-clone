@@ -34,6 +34,7 @@ function Comments({
           } = reply.snippet;
           return (
             <CommentHoc
+              key={reply.id}
               comment={textOriginal}
               authorDisplayName={authorDisplayName}
               authorProfileImageUrl={authorProfileImageUrl}

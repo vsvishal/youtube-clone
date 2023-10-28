@@ -10,7 +10,7 @@ export const AVATAR =
 export const SEARCH_ICON =
   "https://cdn-icons-png.flaticon.com/512/482/482631.png";
 
-const API_KEY = "AIzaSyAIVed_jzYy_O_ZM5_l6Mn31wGC5j--ZLQ";
+export const API_KEY = "AIzaSyAIVed_jzYy_O_ZM5_l6Mn31wGC5j--ZLQ";
 
 export const YOUTUBE_VIDEOS_URL =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
@@ -21,7 +21,7 @@ export const YOUTUBE_SEARCH_API =
 
 export const CHANNELS_URL = `https://youtube.googleapis.com/youtube/v3/channels?key=${API_KEY}`;
 
-export const COMMENTS_URL = `https://youtube.googleapis.com/youtube/v3/comments?part=id&id=FpRq9C6C19g&key=${API_KEY}`;
+export const COMMENTS_URL = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=`;
 
 export const BUTTON_NAME_LIST = [
   "ALL",
