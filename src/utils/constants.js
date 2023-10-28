@@ -33,4 +33,5 @@ export const BUTTON_NAME_LIST = [
   "Recently uploaded",
   "Watched",
   "New to you",
+  "News",
 ];

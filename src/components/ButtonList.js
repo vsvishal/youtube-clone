@@ -4,7 +4,7 @@ import { BUTTON_NAME_LIST } from "../utils/constants";
 
 function ButtonList() {
   return (
-    <div className="flex">
+    <div className="flex flex-wrap justify-center">
       {BUTTON_NAME_LIST.map((btnName) => (
         <Button key={btnName} name={btnName} />
       ))}
