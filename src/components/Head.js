@@ -26,6 +26,7 @@ function Head() {
   // but if the diff between 2 api calls is <200ms
   // otherwise decline the api call
   useEffect(() => {
+    // Debouncing
     const timer = setTimeout(() => {
       if (searchCache[searchQuery]) {
         setSuggestions(searchCache[searchQuery]);

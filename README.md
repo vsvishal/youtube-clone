@@ -85,3 +85,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Least Recently Used (LRU) Cache
 
 ### N level nesting
+
+## If data is not live then we can simply fetch the api inside the useEffect()
+
+## Handle LIVE Data
+
+- WEB SOCKETS: 2 way communication is made, hadsake it made between client & server, no regular interval, connection is heavy. [eg. Stock Trading app, whatsapp ]
+- API Polling: Single direction data is sent (from Server to UI) at some interval, UI will check again & again data from server (poll data) [e.g. gmail, crickbuzz]
