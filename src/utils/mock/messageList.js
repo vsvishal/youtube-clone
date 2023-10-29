@@ -1,0 +1,18 @@
+export const MESSAGE_LIST = [
+  "Hey everyone let's have a fun today 😃😄",
+  "let's dance today 😃",
+  "I am completely enjoying it !!!",
+  "🚀🚀",
+  "👋👌",
+  "Fabilous amazing 🌝",
+  "Hope Never ends ...!! 😎😎",
+  "I am the boss of the universe 🧩",
+  "🙏🙏🙏",
+  "🐼🐼 🐸🐸",
+  "🐶 Oppppppssssssssss..........",
+  "Old is gold 🌴🌴 loving it",
+  "Really enjoying it a lot thanks for sharing🙂",
+  "🌎🌃 Home sweeeeeat home ",
+  "CLEVER NEXT what, tell me now 🛺🚇",
+  "Singing my mind lika a bird 🕊️🦜",
+];

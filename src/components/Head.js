@@ -52,7 +52,7 @@ function Head() {
   };
 
   return (
-    <div className="flex justify-between py-3 px-6 m-2 shadow-md sticky top-0 z-20 bg-white">
+    <div className="flex justify-between py-3 px-6 m-2 shadow-md sticky top-0 z-20 bg-white font-Roboto">
       <div className="flex col-span-1">
         <img
           src={HAMBURGER_ICON}

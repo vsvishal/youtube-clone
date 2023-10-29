@@ -1,20 +1,19 @@
-import { useEffect } from "react";
-import { CHANNELS_URL } from "../constants";
-import { useDispatch } from "react-redux";
-import { addChannels } from "../redux/channelSlice";
+import { useEffect, useState } from "react";
+import { API_KEY, CHANNELS_URL } from "../constants";
 
-const useGetChannels = () => {
-  const dispatch = useDispatch();
+const useGetChannels = (channelId) => {
+  const [channelData, setChannelData] = useState([]);
 
   useEffect(() => {
     fetchChannels();
   }, []);
 
   const fetchChannels = async () => {
-    const response = await fetch(CHANNELS_URL);
+    const response = await fetch(CHANNELS_URL + channelId + "&key=" + API_KEY);
     const data = await response.json();
-    dispatch(addChannels(data));
+    setChannelData(data.items);
   };
+  return channelData;
 };
 
 export default useGetChannels;

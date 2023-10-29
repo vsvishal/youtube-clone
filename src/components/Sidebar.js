@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
-    <div className="p-4 w-48 shadow-lg">
+    <div className="p-4 w-48 shadow-lg font-Roboto">
       <div>
         <ul>
           <Link to={"/"}>

@@ -9,7 +9,7 @@ function CommentsContainer() {
 
   return (
     <div>
-      <h1 className="font-bold">CommentsContainer</h1>
+      <h1 className="font-bold my-2 font-Roboto">Comments</h1>
       {comments.map((comment) => {
         const {
           authorDisplayName,
@@ -26,7 +26,7 @@ function CommentsContainer() {
             publishedAt={publishedAt}
             replies={comment.replies ? comment.replies.comments : "empty-reply"}
             imgCss={"w-10 h-10 rounded-full"}
-            paraCss={"ml-14 w-2/4"}
+            paraCss={"ml-14 w-[720px] text-sm"}
           />
         );
       })}

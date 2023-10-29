@@ -6,6 +6,7 @@ import likeImg from "../images/likebtn.png";
 import dislikeImg from "../images/dislike.png";
 import shareImg from "../images/share.png";
 import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
 
 function WatchPage() {
   const [searchParams] = useSearchParams();
@@ -19,6 +20,8 @@ function WatchPage() {
     (video) => video.id === searchParams.get("v")
   );
 
+  console.log("filteredVideo: ", filteredVideo);
+
   const { snippet, statistics } = filteredVideo[0] || [];
   const { channelTitle, title, thumbnails } = snippet || {};
 
@@ -28,11 +31,11 @@ function WatchPage() {
 
   return (
     <>
-      <div className="py-3 px-10">
+      <div className="flex py-3 px-[5%] font-Roboto">
         <div>
           <iframe
             className="rounded-2xl"
-            width="750"
+            width="790"
             height="400"
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
             title="YouTube video player"
@@ -62,9 +65,12 @@ function WatchPage() {
               <h2>Share</h2>
             </div>
           </div>
+          <div className="py-5">
+            <CommentsContainer />
+          </div>
         </div>
-        <div className="py-5">
-          <CommentsContainer />
+        <div>
+          <LiveChat />
         </div>
       </div>
     </>

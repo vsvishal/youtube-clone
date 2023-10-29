@@ -9,13 +9,13 @@ function Body() {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   // useGetChannels();
   return (
-    <>
+    <div className="font-Roboto">
       <Head />
       <div className="flex">
         {isMenuOpen && <Sidebar />}
         <Outlet />
       </div>
-    </>
+    </div>
   );
 }
 

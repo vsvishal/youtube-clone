@@ -12,7 +12,7 @@ function CommentHoc({
 }) {
   return (
     <>
-      <div className="mx-4 px-4">
+      <div className="mx-4 px-4 font-Roboto">
         {/* <h1 className="font-bold px-2 mx-2 -mb-3">Reply</h1> */}
         <Comments
           comment={comment}
