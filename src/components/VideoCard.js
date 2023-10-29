@@ -7,7 +7,6 @@ function VideoCard({ video_info }) {
   const { channelTitle, title, thumbnails, channelId } = snippet;
 
   const channelData = useGetChannels(channelId);
-
   if (channelData.length === 0) return null;
 
   return (

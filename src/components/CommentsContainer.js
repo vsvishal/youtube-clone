@@ -3,13 +3,14 @@ import Comments from "./Comments";
 import { useSearchParams } from "react-router-dom";
 import useGetComments from "../utils/hook/useGetComments";
 
-function CommentsContainer() {
+function CommentsContainer({ totalComment }) {
   const [searchParams] = useSearchParams();
   const comments = useGetComments(searchParams.get("v"));
+  console.log("comments: ", comments);
 
   return (
     <div>
-      <h1 className="font-bold my-2 font-Roboto">Comments</h1>
+      <h1 className="font-bold my-2 font-Roboto">{totalComment} Comments</h1>
       {comments.map((comment) => {
         const {
           authorDisplayName,
