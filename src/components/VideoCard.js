@@ -1,10 +1,11 @@
 import React from "react";
 import useGetChannels from "../utils/hook/useGetChannels";
+import { abbreviateNumber, getDifferenceBetweenDates } from "../utils/helper";
 
 function VideoCard({ video_info }) {
   const { snippet, statistics } = video_info;
-  // console.log("video_info ", video_info);
-  const { channelTitle, title, thumbnails, channelId } = snippet;
+  console.log("video_info ", video_info);
+  const { channelTitle, title, thumbnails, channelId, publishedAt } = snippet;
 
   const channelData = useGetChannels(channelId);
   if (channelData.length === 0) return null;
@@ -29,7 +30,12 @@ function VideoCard({ video_info }) {
             {title.length > 75 ? title.substring(0, 75) + "..." : title}
           </p>
           <h3>{channelTitle}</h3>
-          <h3>{statistics.viewCount} views</h3>
+          <div className="flex">
+            <h3>{abbreviateNumber(statistics.viewCount)} views </h3>
+            <span className="ml-2">
+              {abbreviateNumber(getDifferenceBetweenDates(publishedAt))}
+            </span>
+          </div>
         </div>
       </div>
     </div>

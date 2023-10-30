@@ -12,6 +12,7 @@ import CommentsContainer from "./CommentsContainer";
 import LiveChat from "./LiveChat";
 import useGetChannels from "../utils/hook/useGetChannels";
 import useGetSubscribersCount from "../utils/hook/useGetSubscribersCount";
+import { abbreviateNumber } from "../utils/helper";
 
 function WatchPage() {
   const [searchParams] = useSearchParams();
@@ -42,7 +43,7 @@ function WatchPage() {
 
   return (
     <>
-      <div className="flex py-3 px-[5%] font-Roboto">
+      <div className="flex py-3 px-[3%] font-Roboto">
         <div>
           <iframe
             className="rounded-2xl"
@@ -64,7 +65,9 @@ function WatchPage() {
               />
               <div>
                 <h4 className="font-semibold">{channelTitle}</h4>
-                <h4 className="text-xs">{subscribersCount} subscribers</h4>
+                <h4 className="text-xs">
+                  {abbreviateNumber(subscribersCount)} subscribers
+                </h4>
               </div>
             </div>
             <div className="flex text-sm">
@@ -75,7 +78,7 @@ function WatchPage() {
               </div>
               <div className="flex items-center justify-center py-2 px-4 bg-gray-200 border rounded-l-full border-r-black">
                 <img src={likeImg} alt="like" className="w-6 mr-2" />
-                <h2>{statistics?.likeCount}</h2>
+                <h2>{abbreviateNumber(statistics?.likeCount)}</h2>
               </div>
               <div className="py-2 px-4 bg-gray-200 border rounded-r-full">
                 <img src={dislikeImg} alt="like" className="w-5 mt-1" />
@@ -91,7 +94,9 @@ function WatchPage() {
             </div>
           </div>
           <div className="py-5">
-            <CommentsContainer totalComment={statistics.commentCount} />
+            <CommentsContainer
+              totalComment={abbreviateNumber(statistics.commentCount)}
+            />
           </div>
         </div>
         <div>

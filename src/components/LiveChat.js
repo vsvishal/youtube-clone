@@ -27,10 +27,10 @@ function LiveChat() {
   // generateRandomNames();
   return (
     <>
-      <div className="ml-12 border bg-slate-50 border-gray-300 rounded-tr-2xl rounded-tl-2xl shadow-lg font-Roboto">
+      <div className="ml-9 border bg-slate-50 border-gray-300 rounded-tr-2xl rounded-tl-2xl shadow-lg font-Roboto">
         <h1 className="py-2 px-6">Live chat</h1>
       </div>
-      <div className="ml-12 py-4 px-6 w-[500px] h-[350px] bg-slate-50 border border-gray-300 shadow-lg overflow-y-scroll flex flex-col-reverse font-Roboto">
+      <div className="ml-9 py-4 px-6 w-[500px] h-[350px] bg-slate-50 border border-gray-300 shadow-lg overflow-y-scroll flex flex-col-reverse font-Roboto">
         {chatMessages.map((message, index) => (
           <ChatMessage
             key={index}
@@ -40,7 +40,7 @@ function LiveChat() {
         ))}
       </div>
       <form
-        className="flex ml-12 py-4 px-6 w-[500px] border bg-slate-50 border-gray-300 rounded-bl-2xl
+        className="flex ml-9 py-4 px-6 w-[500px] border bg-slate-50 border-gray-300 rounded-bl-2xl
          rounded-br-2xl shadow-lg font-Roboto"
         onSubmit={(e) => {
           e.preventDefault();

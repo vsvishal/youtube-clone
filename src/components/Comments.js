@@ -16,7 +16,7 @@ function Comments({
         <div className="flex items-center">
           <img className={imgCss} src={authorProfileImageUrl} alt="profile" />
           <p className="mt-1 ml-4 font-semibold text-sm">{authorDisplayName}</p>
-          <p className="mt-1 ml-4 text-sm">{publishedAt}</p>
+          <p className="text-gray-500 mt-1 ml-2 text-sm">{publishedAt}</p>
         </div>
         <p className={paraCss}>{comment}</p>
       </div>
