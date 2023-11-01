@@ -11,9 +11,9 @@ function VideoCard({ video_info }) {
   if (channelData.length === 0) return null;
 
   return (
-    <div className="p-2 m-2 shadow-lg h-[95%] font-Roboto">
+    <div className="p-2 m-2 shadow-xl h-[95%] font-Roboto">
       <img
-        className="w-72 rounded-lg hover:rounded-none"
+        className="w-96 md:w-fit rounded-lg hover:rounded-none"
         src={thumbnails.medium.url}
         alt="thumbnail"
       />
@@ -25,7 +25,7 @@ function VideoCard({ video_info }) {
             className="w-8 h-8 rounded-full"
           />
         </div>
-        <div className=" w-96">
+        <div className="w-96 text-sm md:text-base">
           <p className="font-bold">
             {title.length > 75 ? title.substring(0, 75) + "..." : title}
           </p>

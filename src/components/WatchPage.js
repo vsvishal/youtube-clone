@@ -45,32 +45,36 @@ function WatchPage() {
       <div className="flex mx-auto py-3 font-Roboto">
         <div>
           <iframe
-            className="rounded-2xl"
-            width="720"
-            height="400"
+            className="rounded-2xl w-96 md:w-[720px] h-56 md:h-[400px]"
+            // width="720"
+            // height="400"
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <h1 className="font-bold w-[710px] my-2">{title}</h1>
+          <h1 className="text-base md:text-xl font-bold w-96 md:w-[710px] my-2">
+            {title}
+          </h1>
           <div className="flex justify-between">
             <div className="flex items-center justify-center pr-2">
               <img
                 src={channelData?.[0]?.snippet?.thumbnails?.medium.url}
                 alt="avatar"
-                className="mr-2 w-8 rounded-full"
+                className="mr-2 w-6 md:w-8 rounded-full"
               />
               <div>
-                <h4 className="font-semibold">{channelTitle}</h4>
+                <h4 className="text-sm md:text-base font-semibold">
+                  {channelTitle}
+                </h4>
                 <h4 className="text-xs">
                   {abbreviateNumber(subscribersCount)} subscribers
                 </h4>
               </div>
             </div>
             <div className="flex text-sm w-auto">
-              <div className="flex items-center justify-center ml-8 py-2 px-3 bg-gray-200 border rounded-full">
+              <div className="flex mr-3 items-center justify-center ml-8 py-2 px-3 bg-gray-200 border rounded-full">
                 <img src={notificationImg} alt="download" className="w-5" />
                 <h2 className="ml-2">Subscribe</h2>
                 <img src={optionImg} alt="option" className="w-6 px-1" />

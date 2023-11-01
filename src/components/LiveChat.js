@@ -25,7 +25,7 @@ function LiveChat() {
   }, []);
 
   return (
-    <div className="">
+    <div className="hidden md:block">
       <div className="border bg-slate-50 border-gray-300 rounded-tr-2xl rounded-tl-2xl shadow-lg font-Roboto">
         <h1 className="py-2 px-6">Live chat</h1>
       </div>

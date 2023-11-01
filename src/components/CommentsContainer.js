@@ -29,7 +29,7 @@ function CommentsContainer({ totalComment }) {
             publishedAt={getDifferenceBetweenDates(publishedAt)}
             replies={comment.replies ? comment.replies.comments : "empty-reply"}
             imgCss={"w-10 h-10 rounded-full"}
-            paraCss={"ml-14 w-[600px] text-sm"}
+            paraCss={"ml-14 w-[600px] text-sm md:text-base"}
           />
         );
       })}
