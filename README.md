@@ -92,3 +92,40 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - WEB SOCKETS: 2 way communication is made, hadsake it made between client & server, no regular interval, connection is heavy. [eg. Stock Trading app, whatsapp ]
 - API Polling: Single direction data is sent (from Server to UI) at some interval, UI will check again & again data from server (poll data) [e.g. gmail, crickbuzz]
+
+```javascript
+import axios from "axios";
+import jsonpAdapter from "axios-jsonp";
+import { useEffect, useState } from "react";
+
+export const useGetSearchSuggestion = (term) => {
+  const [suggestions, setSuggestions] = useState([]);
+
+  useEffect(() => {
+    getSuggestions(term);
+  }, [term]);
+
+  const getSuggestions = (term) => {
+    const GOOGLE_AC_URL = `https://clients1.google.com/complete/search`;
+    return axios({
+      // A YT undocumented API for auto suggest search queries
+      url: GOOGLE_AC_URL,
+      adapter: jsonpAdapter,
+      params: {
+        client: "youtube",
+        hl: "en",
+        ds: "yt",
+        q: term,
+      },
+    }).then((res) => {
+      console.log("jsonp results >> ", res);
+      if (res.status !== 200) {
+        throw Error("Suggest API not 200!");
+      }
+      setSuggestions(res.data[1].map((item) => item[0]));
+    });
+  };
+
+  return suggestions;
+};
+```

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/redux/appSlice";
 import { Link } from "react-router-dom";
 import { cacheResults } from "../utils/redux/searchSlice";
+import { getSearchSuggestion } from "../utils/getSearchSuggestion";
 // import useSearchVideos from "../utils/hook/useSearchVideos";
 
 function Head() {
@@ -17,6 +18,20 @@ function Head() {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestion, setShowSuggestion] = useState(false);
   const searchCache = useSelector((store) => store.search);
+
+  // const searchSuggestion = useGetSearchSuggestion(searchQuery);
+  // console.log("searchSuggestion ", searchSuggestion);
+  // setSuggestions(searchSuggestion);
+
+  useEffect(() => {
+    getSuggestions();
+  }, [searchQuery]);
+
+  const getSuggestions = async () => {
+    const suggestData = await getSearchSuggestion(searchQuery);
+    console.log("suggestData: ", suggestData);
+    setSuggestions(suggestData);
+  };
 
   const dispatch = useDispatch();
   const toggleMenuHandler = () => {
@@ -26,31 +41,31 @@ function Head() {
   // make an API call after every key press
   // but if the diff between 2 api calls is <200ms
   // otherwise decline the api call
-  useEffect(() => {
-    // Debouncing
-    const timer = setTimeout(() => {
-      if (searchCache[searchQuery]) {
-        setSuggestions(searchCache[searchQuery]);
-      } else {
-        getSearchSuggestion();
-      }
-    }, 200);
+  // useEffect(() => {
+  //   // Debouncing
+  //   const timer = setTimeout(() => {
+  //     if (searchCache[searchQuery]) {
+  //       setSuggestions(searchCache[searchQuery]);
+  //     } else {
+  //       getSearchSuggestion();
+  //     }
+  //   }, 200);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [searchQuery]);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [searchQuery]);
 
-  const getSearchSuggestion = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-    const json = await data.json();
-    setSuggestions(json[1]);
-    dispatch(
-      cacheResults({
-        [searchQuery]: json[1],
-      })
-    );
-  };
+  // const getSearchSuggestion = async () => {
+  //   const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+  //   const json = await data.json();
+  //   setSuggestions(json[1]);
+  //   dispatch(
+  //     cacheResults({
+  //       [searchQuery]: json[1],
+  //     })
+  //   );
+  // };
 
   // console.log("searchQuery ", searchQuery);
   // console.log("useSearchVideos(searchQuery)", useSearchVideos(searchQuery));
@@ -88,7 +103,7 @@ function Head() {
         {showSuggestion && (
           <div className="fixed bg-white w-[572px] rounded-lg shadow-lg border border-gray-100">
             <ul>
-              {suggestions.map((suggestion) => (
+              {suggestions?.map((suggestion) => (
                 <li
                   key={suggestion}
                   className="flex py-1 px-4 m-1 hover:bg-gray-100"
