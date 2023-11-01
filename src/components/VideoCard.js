@@ -4,7 +4,7 @@ import { abbreviateNumber, getDifferenceBetweenDates } from "../utils/helper";
 
 function VideoCard({ video_info }) {
   const { snippet, statistics } = video_info;
-  console.log("video_info ", video_info);
+  // console.log("video_info ", video_info);
   const { channelTitle, title, thumbnails, channelId, publishedAt } = snippet;
 
   const channelData = useGetChannels(channelId);

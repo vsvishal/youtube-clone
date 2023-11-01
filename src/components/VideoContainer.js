@@ -4,6 +4,7 @@ import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addMostPopularVideos } from "../utils/redux/videoSlice";
+import useSearchVideos from "../utils/hook/useSearchVideos";
 
 function VideoContainer() {
   const [videos, setVideos] = useState([]);
@@ -19,6 +20,8 @@ function VideoContainer() {
     setVideos(json.items);
     dispatch(addMostPopularVideos(json.items));
   };
+
+  if (!videos) return null;
 
   return (
     <div className="flex flex-wrap justify-center font-Roboto">

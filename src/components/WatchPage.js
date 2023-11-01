@@ -27,7 +27,6 @@ function WatchPage() {
   );
 
   const { snippet, statistics } = filteredVideo[0] || [];
-  console.log("filteredVideo[0] ", filteredVideo[0]);
 
   const { channelTitle, title, channelId } = snippet || {};
 

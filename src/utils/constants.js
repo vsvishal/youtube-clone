@@ -12,7 +12,7 @@ export const AVATAR =
 export const SEARCH_ICON =
   "https://cdn-icons-png.flaticon.com/512/482/482631.png";
 
-export const API_KEY = "AIzaSyAIVed_jzYy_O_ZM5_l6Mn31wGC5j--ZLQ";
+export const API_KEY = "AIzaSyDxO3JnHf4JzRAbCa0ZBeLgwb8y2WJfXys";
 
 export const YOUTUBE_VIDEOS_URL =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
@@ -37,3 +37,7 @@ export const BUTTON_NAME_LIST = [
   "New to you",
   "News",
 ];
+
+export const SEARCH_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&type=video&key=${API_KEY}&q=`;
+
+// "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&type=video&q=javacript&key=AIzaSyAIVed_jzYy_O_ZM5_l6Mn31wGC5j--ZLQ";

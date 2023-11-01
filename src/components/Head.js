@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/redux/appSlice";
 import { Link } from "react-router-dom";
 import { cacheResults } from "../utils/redux/searchSlice";
+// import useSearchVideos from "../utils/hook/useSearchVideos";
 
 function Head() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -50,6 +51,10 @@ function Head() {
       })
     );
   };
+
+  // console.log("searchQuery ", searchQuery);
+  // console.log("useSearchVideos(searchQuery)", useSearchVideos(searchQuery));
+  // console.log(typeof useSearchVideos(searchQuery));
 
   return (
     <div className="flex justify-between py-3 px-6 m-2 shadow-md sticky top-0 z-20 bg-white font-Roboto">

@@ -7,7 +7,6 @@ import { getDifferenceBetweenDates } from "../utils/helper";
 function CommentsContainer({ totalComment }) {
   const [searchParams] = useSearchParams();
   const comments = useGetComments(searchParams.get("v"));
-  console.log("comments: ", comments);
 
   return (
     <div>
