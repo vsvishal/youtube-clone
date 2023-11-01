@@ -13,7 +13,7 @@ function VideoCard({ video_info }) {
   return (
     <div className="p-2 m-2 shadow-lg h-[95%] font-Roboto">
       <img
-        className="w-96 rounded-lg hover:rounded-none"
+        className="w-72 rounded-lg hover:rounded-none"
         src={thumbnails.medium.url}
         alt="thumbnail"
       />

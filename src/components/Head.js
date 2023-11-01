@@ -29,7 +29,6 @@ function Head() {
 
   const getSuggestions = async () => {
     const suggestData = await getSearchSuggestion(searchQuery);
-    console.log("suggestData: ", suggestData);
     setSuggestions(suggestData);
   };
 

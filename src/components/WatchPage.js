@@ -38,15 +38,15 @@ function WatchPage() {
   const subscribersCount = subscribers?.statistics?.subscriberCount;
 
   const channelData = useGetChannels(channelId);
-  if (channelData.length === 0) return null;
+  if (!channelData || channelData.length === 0) return null;
 
   return (
     <>
-      <div className="flex py-3 px-[3%] font-Roboto">
+      <div className="flex mx-auto py-3 font-Roboto">
         <div>
           <iframe
             className="rounded-2xl"
-            width="790"
+            width="720"
             height="400"
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
             title="YouTube video player"
@@ -69,24 +69,24 @@ function WatchPage() {
                 </h4>
               </div>
             </div>
-            <div className="flex text-sm">
-              <div className="flex items-center justify-center ml-8 py-2 px-4 bg-gray-200 border rounded-full">
+            <div className="flex text-sm w-auto">
+              <div className="flex items-center justify-center ml-8 py-2 px-3 bg-gray-200 border rounded-full">
                 <img src={notificationImg} alt="download" className="w-5" />
                 <h2 className="ml-2">Subscribe</h2>
                 <img src={optionImg} alt="option" className="w-6 px-1" />
               </div>
-              <div className="flex items-center justify-center py-2 px-4 bg-gray-200 border rounded-l-full border-r-black">
+              <div className="flex items-center justify-center py-2 px-3 bg-gray-200 border rounded-l-full border-r-black">
                 <img src={likeImg} alt="like" className="w-6 mr-2" />
                 <h2>{abbreviateNumber(statistics?.likeCount)}</h2>
               </div>
-              <div className="py-2 px-4 bg-gray-200 border rounded-r-full">
+              <div className="py-2 px-3 bg-gray-200 border rounded-r-full">
                 <img src={dislikeImg} alt="like" className="w-5 mt-1" />
               </div>
-              <div className="flex items-center justify-center ml-8 py-2 px-4 bg-gray-200 border rounded-full">
+              <div className="flex items-center justify-center ml-8 py-2 px-3 bg-gray-200 border rounded-full">
                 <img src={shareImg} alt="share" className="w-5" />
                 <h2 className="ml-2">Share</h2>
               </div>
-              <div className="flex items-center justify-center ml-8 py-2 px-4 bg-gray-200 border rounded-full">
+              <div className="flex items-center justify-center ml-8 py-2 px-3 bg-gray-200 border rounded-full">
                 <img src={downloadImg} alt="download" className="w-5" />
                 <h2 className="ml-2">Download</h2>
               </div>
@@ -98,7 +98,7 @@ function WatchPage() {
             />
           </div>
         </div>
-        <div>
+        <div className="ml-6">
           <LiveChat />
         </div>
       </div>

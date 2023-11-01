@@ -118,7 +118,6 @@ export const useGetSearchSuggestion = (term) => {
         q: term,
       },
     }).then((res) => {
-      console.log("jsonp results >> ", res);
       if (res.status !== 200) {
         throw Error("Suggest API not 200!");
       }

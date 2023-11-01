@@ -4,7 +4,7 @@ import VideoContainer from "./VideoContainer";
 
 function MainContainer() {
   return (
-    <div className="font-Roboto">
+    <div className="font-Roboto mx-auto">
       <ButtonList />
       <VideoContainer />
     </div>

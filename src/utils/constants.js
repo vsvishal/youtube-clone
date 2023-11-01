@@ -28,7 +28,6 @@ export const COMMENTS_URL = `https://youtube.googleapis.com/youtube/v3/commentTh
 export const BUTTON_NAME_LIST = [
   "ALL",
   "Computer Programming",
-  "Podcasts",
   "Music",
   "Stock",
   "Live",
