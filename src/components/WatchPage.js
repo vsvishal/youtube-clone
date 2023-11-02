@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { closeMenu } from "../utils/redux/appSlice";
 import likeImg from "../images/likebtn.png";
 import dislikeImg from "../images/dislike.png";
@@ -15,12 +15,17 @@ import useGetSubscribersCount from "../utils/hook/useGetSubscribersCount";
 import { abbreviateNumber } from "../utils/helper";
 
 function WatchPage() {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
 
   const mostPopularVideos = useSelector(
     (store) => store.videos.mostPopularVideos
   );
+
+  // if (mostPopularVideos.length === 0) {
+  //   navigate("/");
+  // }
 
   const filteredVideo = mostPopularVideos.filter(
     (video) => video.id === searchParams.get("v")

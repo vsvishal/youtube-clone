@@ -1,6 +1,7 @@
 import React from "react";
 import useGetChannels from "../utils/hook/useGetChannels";
 import { abbreviateNumber, getDifferenceBetweenDates } from "../utils/helper";
+import Shimmer from "./Shimmer";
 
 function VideoCard({ video_info }) {
   const { snippet, statistics } = video_info;
@@ -8,7 +9,8 @@ function VideoCard({ video_info }) {
   const { channelTitle, title, thumbnails, channelId, publishedAt } = snippet;
 
   const channelData = useGetChannels(channelId);
-  if (channelData.length === 0) return null;
+  if (channelData.length === 0) return <Shimmer />;
+  // if (channelData.length === 0) return null;
 
   return (
     <div className="p-2 m-2 shadow-xl h-[95%] font-Roboto">

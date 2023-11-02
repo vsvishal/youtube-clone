@@ -7,7 +7,7 @@ function Sidebar() {
       <div>
         <ul>
           <Link to={"/"}>
-            <li>Home</li>
+            <li className="font-bold">Home</li>
           </Link>
           <li>Sorts</li>
           <li>Subscriptions</li>

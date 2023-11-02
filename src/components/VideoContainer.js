@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addMostPopularVideos } from "../utils/redux/videoSlice";
 import useSearchVideos from "../utils/hook/useSearchVideos";
+import Shimmer from "./Shimmer";
 
 function VideoContainer() {
   const [videos, setVideos] = useState([]);
@@ -21,7 +22,7 @@ function VideoContainer() {
     dispatch(addMostPopularVideos(json.items));
   };
 
-  if (!videos) return null;
+  if (!videos) <Shimmer />;
 
   return (
     <div className="flex flex-wrap justify-center font-Roboto">
