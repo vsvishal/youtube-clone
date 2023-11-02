@@ -63,7 +63,7 @@ function Head() {
   // console.log(typeof useSearchVideos(searchQuery));
 
   return (
-    <div className="flex justify-between py-3 px-6 m-2 shadow-md sticky top-0 z-20 bg-white font-Roboto">
+    <div className="flex justify-between py-3 px-2 md:px-6 m-1 shadow-md sticky top-0 z-20 bg-white font-Roboto">
       <div className="flex col-span-1">
         <img
           src={HAMBURGER_ICON}
@@ -86,7 +86,7 @@ function Head() {
             onFocus={() => setShowSuggestion(true)}
             onBlur={() => setShowSuggestion(false)}
           />
-          <button className="border border-gray-400 rounded-r-full w-9 md:w-16 h-7 md:h-10 bg-gray-100">
+          <button className="border border-gray-400 rounded-r-full w-8 md:w-16 h-7 md:h-10 bg-gray-100">
             <img
               alt="search-icon"
               className="h-3 md:h-5 mx-auto"
@@ -96,7 +96,7 @@ function Head() {
         </div>
 
         {showSuggestion && (
-          <div className="fixed bg-white w-40 md:w-[572px] rounded-lg text-sm md:text-base shadow-lg border border-gray-100">
+          <div className="fixed bg-white w-48 md:w-[572px] rounded-lg text-xs md:text-sm shadow-lg border border-gray-100">
             <ul>
               {suggestions?.map((suggestion) => (
                 <li
@@ -116,7 +116,7 @@ function Head() {
         )}
       </div>
       <div>
-        <img src={AVATAR} alt="avatar" className="w-8 md:w-12 h-7 md:h-12" />
+        <img src={AVATAR} alt="avatar" className="w-7 md:w-12 h-7 md:h-12" />
       </div>
     </div>
   );

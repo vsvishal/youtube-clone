@@ -74,7 +74,7 @@ function WatchPage() {
               </div>
             </div>
             <div className="flex text-xs md:text-sm">
-              <div className="flex items-center justify-center py-2 px-3 bg-gray-200 border rounded-full">
+              <div className="flex items-center justify-center py-2 px-3 bg-gray-100 border rounded-full">
                 <img
                   src={notificationImg}
                   alt="notification"
@@ -87,18 +87,18 @@ function WatchPage() {
                   className="hidden md:block w-6 px-1"
                 />
               </div>
-              <div className="flex items-center justify-center ml-2 py-2 px-3 bg-gray-200 border rounded-l-full border-r-black">
+              <div className="flex items-center justify-center ml-2 py-2 px-3 bg-gray-100 border rounded-l-full border-r-black">
                 <img src={likeImg} alt="like" className="w-5 md:w-6 mr-2" />
                 <h2>{abbreviateNumber(statistics?.likeCount)}</h2>
               </div>
-              <div className="py-2 px-3 bg-gray-200 border rounded-r-full">
+              <div className="py-2 px-3 bg-gray-100 border rounded-r-full">
                 <img src={dislikeImg} alt="like" className="w-4 md:w-5 mt-1" />
               </div>
-              <div className="ml-2 flex items-center justify-center py-2 px-3 bg-gray-200 border rounded-full">
+              <div className="ml-2 flex items-center justify-center py-2 px-3 bg-gray-100 border rounded-full">
                 <img src={shareImg} alt="share" className="w-4 md:w-5" />
                 <h2 className="ml-2">Share</h2>
               </div>
-              <div className="ml-2 flex items-center justify-center py-2 px-3 bg-gray-200 border rounded-full">
+              <div className="ml-2 flex items-center justify-center py-2 px-3 bg-gray-100 border rounded-full">
                 <img src={downloadImg} alt="download" className="w-5" />
                 <h2 className="hidden md:block ml-2">Download</h2>
               </div>

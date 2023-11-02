@@ -28,8 +28,8 @@ function CommentsContainer({ totalComment }) {
             authorProfileImageUrl={authorProfileImageUrl}
             publishedAt={getDifferenceBetweenDates(publishedAt)}
             replies={comment.replies ? comment.replies.comments : "empty-reply"}
-            imgCss={"w-6 md:w-10 h-6 md:h-10 rounded-full"}
-            paraCss={"ml-10 md:ml-14 w-72 md:w-[600px] text-xs md:text-base"}
+            imgCss={"w-6 md:w-8 h-6 md:h-8 rounded-full"}
+            paraCss={"ml-10 md:ml-12 w-72 md:w-[600px] text-xs md:text-sm"}
           />
         );
       })}

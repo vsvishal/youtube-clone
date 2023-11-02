@@ -15,12 +15,12 @@ function Comments({
       <div className="mb-4 font-Roboto">
         <div className="flex">
           <img className={imgCss} src={authorProfileImageUrl} alt="profile" />
-          <h2 className="mt-1 ml-4 font-semibold text-xs md:text-base">
+          <h3 className="mt-1 ml-4 font-semibold text-xs md:text-sm">
             {authorDisplayName}
-          </h2>
-          <h2 className="text-gray-500 mt-1 ml-2 text-xs md:text-base">
+          </h3>
+          <h3 className="text-gray-500 mt-1 ml-2 text-xs md:text-sm">
             {publishedAt}
-          </h2>
+          </h3>
         </div>
         <p className={paraCss}>{comment}</p>
       </div>
