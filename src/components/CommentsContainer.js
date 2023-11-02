@@ -10,7 +10,7 @@ function CommentsContainer({ totalComment }) {
 
   return (
     <div>
-      <h1 className="text-xl font-bold my-2 mb-5 font-Roboto">
+      <h1 className="text-base md:text-xl font-bold my-0 md:my-2 mb-2 md:mb-5 font-Roboto">
         {totalComment} Comments
       </h1>
       {comments.map((comment) => {
@@ -28,8 +28,8 @@ function CommentsContainer({ totalComment }) {
             authorProfileImageUrl={authorProfileImageUrl}
             publishedAt={getDifferenceBetweenDates(publishedAt)}
             replies={comment.replies ? comment.replies.comments : "empty-reply"}
-            imgCss={"w-10 h-10 rounded-full"}
-            paraCss={"ml-14 w-[600px] text-sm md:text-base"}
+            imgCss={"w-6 md:w-10 h-6 md:h-10 rounded-full"}
+            paraCss={"ml-10 md:ml-14 w-[600px] text-xs md:text-base"}
           />
         );
       })}

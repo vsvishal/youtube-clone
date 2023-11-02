@@ -43,7 +43,7 @@ function WatchPage() {
   return (
     <>
       <div className="flex mx-auto py-3 font-Roboto">
-        <div>
+        <div className="">
           <iframe
             className="rounded-2xl w-96 md:w-[720px] h-56 md:h-[400px]"
             // width="720"
@@ -57,8 +57,8 @@ function WatchPage() {
           <h1 className="text-base md:text-xl font-bold w-96 md:w-[710px] my-2">
             {title}
           </h1>
-          <div className="flex justify-between">
-            <div className="flex items-center justify-center pr-2">
+          <div className="flex flex-col md:flex-row justify-between w-96 md:w-[720px]">
+            <div className="flex items-center justify-start md:justify-center pr-2">
               <img
                 src={channelData?.[0]?.snippet?.thumbnails?.medium.url}
                 alt="avatar"
@@ -73,26 +73,34 @@ function WatchPage() {
                 </h4>
               </div>
             </div>
-            <div className="flex text-sm w-auto">
-              <div className="flex mr-3 items-center justify-center ml-8 py-2 px-3 bg-gray-200 border rounded-full">
-                <img src={notificationImg} alt="download" className="w-5" />
-                <h2 className="ml-2">Subscribe</h2>
-                <img src={optionImg} alt="option" className="w-6 px-1" />
+            <div className="flex text-xs md:text-sm">
+              <div className="flex items-center justify-center py-2 px-3 bg-gray-200 border rounded-full">
+                <img
+                  src={notificationImg}
+                  alt="notification"
+                  className="w-4 md:w-5"
+                />
+                <h2 className="ml-1 md:ml-2">Subscribe</h2>
+                <img
+                  src={optionImg}
+                  alt="option"
+                  className="hidden md:block w-6 px-1"
+                />
               </div>
-              <div className="flex items-center justify-center py-2 px-3 bg-gray-200 border rounded-l-full border-r-black">
-                <img src={likeImg} alt="like" className="w-6 mr-2" />
+              <div className="flex items-center justify-center ml-2 py-2 px-3 bg-gray-200 border rounded-l-full border-r-black">
+                <img src={likeImg} alt="like" className="w-5 md:w-6 mr-2" />
                 <h2>{abbreviateNumber(statistics?.likeCount)}</h2>
               </div>
               <div className="py-2 px-3 bg-gray-200 border rounded-r-full">
-                <img src={dislikeImg} alt="like" className="w-5 mt-1" />
+                <img src={dislikeImg} alt="like" className="w-4 md:w-5 mt-1" />
               </div>
-              <div className="flex items-center justify-center ml-8 py-2 px-3 bg-gray-200 border rounded-full">
-                <img src={shareImg} alt="share" className="w-5" />
+              <div className="ml-2 flex items-center justify-center py-2 px-3 bg-gray-200 border rounded-full">
+                <img src={shareImg} alt="share" className="w-4 md:w-5" />
                 <h2 className="ml-2">Share</h2>
               </div>
-              <div className="flex items-center justify-center ml-8 py-2 px-3 bg-gray-200 border rounded-full">
+              <div className="ml-2 flex items-center justify-center py-2 px-3 bg-gray-200 border rounded-full">
                 <img src={downloadImg} alt="download" className="w-5" />
-                <h2 className="ml-2">Download</h2>
+                <h2 className="hidden md:block ml-2">Download</h2>
               </div>
             </div>
           </div>
