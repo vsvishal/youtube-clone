@@ -42,10 +42,10 @@ function WatchPage() {
 
   return (
     <>
-      <div className="flex mx-auto py-3 font-Roboto">
-        <div className="">
+      <div className="flex mx-1 md:mx-auto py-3 font-Roboto">
+        <div>
           <iframe
-            className="rounded-2xl w-96 md:w-[720px] h-56 md:h-[400px]"
+            className="rounded-none md:rounded-2xl w-full md:w-[720px] h-56 md:h-[400px]"
             // width="720"
             // height="400"
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
@@ -54,10 +54,10 @@ function WatchPage() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <h1 className="text-base md:text-xl font-bold w-96 md:w-[710px] my-2">
+          <h1 className="text-base md:text-xl font-bold w-full md:w-[710px] my-2">
             {title}
           </h1>
-          <div className="flex flex-col md:flex-row justify-between w-96 md:w-[720px]">
+          <div className="flex flex-col md:flex-row justify-between w-full md:w-[720px]">
             <div className="flex items-center justify-start md:justify-center pr-2">
               <img
                 src={channelData?.[0]?.snippet?.thumbnails?.medium.url}
@@ -110,7 +110,7 @@ function WatchPage() {
             />
           </div>
         </div>
-        <div className="ml-6">
+        <div className="ml-0 md:ml-6">
           <LiveChat />
         </div>
       </div>

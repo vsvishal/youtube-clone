@@ -41,7 +41,7 @@ function Comments({
               publishedAt={publishedAt}
               replies={"empty-reply"}
               imgCss={"w-6 h-6 rounded-full"}
-              paraCss={"ml-10 w-[500px] text-sm"}
+              paraCss={"ml-10 w-52 md:w-[500px] text-sm"}
             />
           );
         })}
