@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/redux/appSlice";
 import { Link } from "react-router-dom";
 import { getSearchSuggestion } from "../utils/getSearchSuggestion";
+import SuggestionList from "./SuggestionList";
 
 function Head() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -16,13 +17,12 @@ function Head() {
   // setSuggestions(searchSuggestion);
 
   useEffect(() => {
+    const getSuggestions = async () => {
+      const suggestData = await getSearchSuggestion(searchQuery);
+      setSuggestions(suggestData);
+    };
     getSuggestions();
   }, [searchQuery]);
-
-  const getSuggestions = async () => {
-    const suggestData = await getSearchSuggestion(searchQuery);
-    setSuggestions(suggestData);
-  };
 
   const dispatch = useDispatch();
   const toggleMenuHandler = () => {
@@ -62,6 +62,10 @@ function Head() {
   // console.log("useSearchVideos(searchQuery)", useSearchVideos(searchQuery));
   // console.log(typeof useSearchVideos(searchQuery));
 
+  const addSuggestionToSearch = (e) => {
+    console.log("Suggestion ", e);
+  };
+
   return (
     <div className="flex justify-between py-3 px-2 md:px-6 m-1 shadow-md sticky top-0 z-20 bg-white font-Roboto">
       <div className="flex col-span-1">
@@ -99,17 +103,7 @@ function Head() {
           <div className="fixed bg-white w-48 md:w-[572px] rounded-lg text-xs md:text-sm shadow-lg border border-gray-100">
             <ul>
               {suggestions?.map((suggestion) => (
-                <li
-                  key={suggestion}
-                  className="flex py-1 px-2 md:px-4 m-1 hover:bg-gray-100"
-                >
-                  <img
-                    alt="search-icon"
-                    className="mr-2 md:mr-3 h-3 md:h-4"
-                    src={SEARCH_ICON}
-                  />
-                  {suggestion}
-                </li>
+                <SuggestionList suggestion={suggestion} />
               ))}
             </ul>
           </div>

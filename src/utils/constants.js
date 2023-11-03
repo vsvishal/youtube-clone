@@ -25,6 +25,8 @@ export const CHANNELS_URL = `https://youtube.googleapis.com/youtube/v3/channels?
 
 export const COMMENTS_URL = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=`;
 
+export const SEARCH_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&key=${API_KEY}&q=`;
+
 export const BUTTON_NAME_LIST = [
   "ALL",
   "Computer Programming",
@@ -36,7 +38,5 @@ export const BUTTON_NAME_LIST = [
   "New to you",
   "News",
 ];
-
-export const SEARCH_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&type=video&key=${API_KEY}&q=`;
 
 // "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&type=video&q=javacript&key=AIzaSyAIVed_jzYy_O_ZM5_l6Mn31wGC5j--ZLQ";

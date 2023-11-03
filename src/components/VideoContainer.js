@@ -4,7 +4,6 @@ import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addMostPopularVideos } from "../utils/redux/videoSlice";
-import useSearchVideos from "../utils/hook/useSearchVideos";
 import Shimmer from "./Shimmer";
 
 function VideoContainer() {
@@ -12,15 +11,15 @@ function VideoContainer() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getVideos();
-  }, []);
+    const getVideos = async () => {
+      const data = await fetch(YOUTUBE_VIDEOS_URL);
+      const json = await data.json();
+      setVideos(json.items);
+      dispatch(addMostPopularVideos(json.items));
+    };
 
-  const getVideos = async () => {
-    const data = await fetch(YOUTUBE_VIDEOS_URL);
-    const json = await data.json();
-    setVideos(json.items);
-    dispatch(addMostPopularVideos(json.items));
-  };
+    getVideos();
+  }, [dispatch]);
 
   if (!videos) <Shimmer />;
 
