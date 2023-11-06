@@ -26,16 +26,16 @@ function Head() {
   };
 
   return (
-    <div className="flex justify-between py-3 px-2 md:px-6 m-1 shadow-md sticky top-0 z-20 bg-white font-Roboto">
+    <div className="flex justify-between py-3 px-2 md:px-4 m-1 shadow-md sticky top-0 z-20 bg-white font-Roboto">
       <div className="flex col-span-1">
         <img
           src={HAMBURGER_ICON}
           alt="hamburger icon"
-          className="hidden md:block w-12 h-8 mx-2 cursor-pointer"
+          className="hidden md:block w-11 h-7 mx-2 cursor-pointer"
           onClick={toggleMenuHandler}
         />
         <Link to={"/"}>
-          <img src={LOGO} alt="logo" className="w-14 md:w-28 h-5 md:h-7" />
+          <img src={LOGO} alt="logo" className="w-14 md:w-24 h-5 md:h-6" />
         </Link>
       </div>
       <div>
@@ -73,7 +73,7 @@ function Head() {
         )}
       </div>
       <div>
-        <img src={AVATAR} alt="avatar" className="w-7 md:w-12 h-7 md:h-12" />
+        <img src={AVATAR} alt="avatar" className="w-7 md:w-10 h-7 md:h-10" />
       </div>
     </div>
   );
