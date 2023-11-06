@@ -32,7 +32,7 @@ import {
 
 function Sidebar() {
   return (
-    <div className="hidden md:block px-2 py-2 w-56 shadow-lg font-Roboto absolute bg-white">
+    <div className="hidden md:block h-full overflow-y-scroll px-2 py-2 w-56 shadow-lg font-Roboto absolute bg-white">
       <div className="py-2 border-b-2">
         <ul>
           <Link to={"/"}>
