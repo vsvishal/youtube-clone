@@ -21,7 +21,7 @@ function VideoContainer() {
     getVideos();
   }, [dispatch]);
 
-  if (!videos) <Shimmer />;
+  if (!videos) return <Shimmer />;
 
   return (
     <div className="flex flex-wrap justify-center font-Roboto">

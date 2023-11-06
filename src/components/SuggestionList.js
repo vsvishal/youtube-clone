@@ -1,13 +1,15 @@
 import React from "react";
 import { SEARCH_ICON } from "../utils/constants";
 
-function SuggestionList({ suggestion }) {
+function SuggestionList({ suggestion, setSearchQuery }) {
   return (
-    <>
+    <div onClick={() => console.log("hello")}>
       <li
-        key={suggestion}
-        className="flex py-1 px-2 md:px-4 m-1 hover:bg-gray-100"
-        onClick={() => console.log("hello")}
+        className="flex py-1 px-2 md:px-4 m-1 hover:bg-gray-100 cursor-pointer"
+        onMouseDown={(e) => {
+          setSearchQuery("");
+          setSearchQuery(e.target.innerText);
+        }}
       >
         <img
           alt="search-icon"
@@ -16,7 +18,7 @@ function SuggestionList({ suggestion }) {
         />
         {suggestion}
       </li>
-    </>
+    </div>
   );
 }
 

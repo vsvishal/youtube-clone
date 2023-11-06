@@ -9,19 +9,23 @@ import WatchPage from "./components/WatchPage";
 import { Provider } from "react-redux";
 import store, { persistor } from "./utils/redux/store";
 import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Body />,
+    errorElement: <ErrorBoundary />,
     children: [
       {
         path: "",
         element: <MainContainer />,
+        errorElement: <ErrorBoundary />,
       },
       {
         path: "/watch",
         element: <WatchPage />,
+        errorElement: <ErrorBoundary />,
       },
     ],
   },

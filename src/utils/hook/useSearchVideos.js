@@ -6,14 +6,13 @@ const useSearchVideos = (query) => {
   const [searchedVideos, setSearchedVideos] = useState([]);
 
   useEffect(() => {
+    const getSearchedVides = async () => {
+      const data = await fetch(SEARCH_URL + query);
+      const json = await data.json();
+      setSearchedVideos(json.items);
+    };
     getSearchedVides();
   }, [query]);
-
-  const getSearchedVides = async () => {
-    const data = await fetch(SEARCH_URL + query);
-    const json = await data.json();
-    setSearchedVideos(json.items);
-  };
 
   return searchedVideos;
 };
