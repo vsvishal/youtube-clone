@@ -3,7 +3,7 @@
 - A clone of youtube web application where user can watch the youtube videos, comment on videos, also see the other people's real comment.
 - The application is developed using Javascript, Node.js, Redux, Firebase and Tailwind css
 
-[👆 applink: youtube-clone](https://clone-f8a23.web.app)
+[👆 applink: youtube-clone](https://yt-challenge-4a1d1.web.app/)
 
 ## Overview of appliction
 
